@@ -1,0 +1,38 @@
+1- Primary & Secondary Files in DB:
+
+الـ Primary file (.mdf): هو الملف الأساسي اللي بيخزن جداول وقواعد البيانات الرئيسية وكمان بيحتوي على معلومات بداية قاعدة البيانات.
+
+الـ Secondary file (.ndf): ملفات إضافية اختيارية لو عايز تقسم البيانات على أكتر من ديسك لتحسين الأداء.
+
+الـ Log file (.ldf): ملف خاص بتسجيل العمليات (Transactions) علشان تقدر تعمل Rollback أو Recovery لو حصل مشكلة.
+
+2- Extensions:
+
+.mdf → Main Data File (البيانات الأساسية + الـ schema).
+
+.ndf → Secondary Data File (بيانات إضافية).
+
+.ldf → Log Data File (تخزين عمليات الترانزاكشن).
+
+3- Files & Filegroups:
+
+Files: هي الملفات نفسها (.mdf, .ndf, .ldf).
+
+Filegroups: مجموعة ملفات بتتعامل معاها كـ وحدة واحدة لتوزيع وتخزين البيانات بشكل منظم.
+
+4- Normalization:
+هي عملية تنظيم الجداول علشان نقلل التكرار (redundancy) ونحافظ على التكامل (integrity).
+
+الفرق بين Mapping و Normalization:
+
+الـ Mapping (زي ERD to Schema) هدفه يحدد الجداول والعلاقات.
+
+الـ Normalization بييجي بعده علشان ينضف الجداول ويشيل التكرار ويظبط البنية.
+
+5- Denormalization:
+هي عكس الـ Normalization، يعني نسمح شوية بتكرار البيانات علشان نزود سرعة الـ Query.
+
+بنحتاجها في البزنس لما الأداء وسرعة القراءة أهم من تقليل المساحة (زي تقارير أو Data Warehouse).
+
+6- Meaning of Clustered by Primary Key in Hard Disk:
+الـ Clustered index معناه إن البيانات نفسها في الهارد بتتخزن مرتبة حسب الـ Primary Key، يعني الترتيب الفعلي للصفوف = ترتيب الـ Index.

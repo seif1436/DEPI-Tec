@@ -1,0 +1,59 @@
+1------------------------------------------
+1. Musician(ID PK, Name, Phone, St, City)
+
+
+2. Instrument(Name PK, Key)
+
+
+3. Album(Id PK, Title, Date, MusicianID FK → Musician(ID))
+
+
+4. Song(Title PK, Author)
+
+
+5. MusicianInstrument(MusicianID FK, InstrumentName FK, PK(MusicianID, InstrumentName))
+
+
+6. MusicianSong(MusicianID FK, SongTitle FK, PK(MusicianID, SongTitle))
+
+
+7. AlbumSong(AlbumID FK, SongTitle FK, PK(AlbumID, SongTitle))
+
+2-------------------------------
+
+1. SalesOffice(NUM PK, Loc, ManagerID FK → Employee.ID)
+
+
+2. Employee(ID PK, Name, OfficeNUM FK → SalesOffice.NUM)
+
+
+3. Property(ID PK, Address, City, State, Zip, OfficeNUM FK → SalesOffice.NUM)
+
+
+4. Owner(ID PK, Name)
+
+
+5. PropertyOwner(PropertyID FK, OwnerID FK, PercentOwned, PK(PropertyID, OwnerID))
+
+3--------------------------------
+
+1. Patient(ID PK, Name, DOB, WardID FK, ConsultantID FK)
+
+
+2. Consultant(ID PK, Name)
+
+
+3. Ward(ID PK, Name, SupervisorID FK → Nurse.ID)
+
+
+4. Nurse(ID PK, Name, WardID FK → Ward.ID)
+
+
+5. Drug(Code PK, Brand, RecDosage)
+
+
+6. Examines(PatientID FK, ConsultantID FK, PK(PatientID, ConsultantID))
+
+
+7. Gives(NurseID FK, PatientID FK, DrugCode FK, Date, Time, Dosage,
+PK(NurseID, PatientID, DrugCode, Date, Time))
